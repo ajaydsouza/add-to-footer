@@ -26,6 +26,7 @@ Comes inbuilt with support for Google Analytics, Statcounter, Reinvigorate and A
 
 = Changelog =
 
+* 1.0.1 - Minor fixes for compatibility with StatCounter and Google Analytics
 * 1.0 - Release
 
 

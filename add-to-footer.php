@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Add to Footer
-Version:     1.0
+Version:     1.0.1
 Plugin URI:  http://ajaydsouza.com/wordpress/plugins/add-to-footer/
 Description: Allows you to add absolutely anything to the footer of your WordPress theme.  <a href="options-general.php?page=addfoot_options">Configure...</a>
 Author:      Ajay D'Souza
@@ -27,7 +27,7 @@ function ald_addfoot() {
 
 	$addfoot_other = stripslashes($addfoot_settings[addfoot_other]);
 	$sc_project = stripslashes($addfoot_settings[sc_project]);
-	$sc_part = stripslashes($addfoot_settings[sc_part]);
+	$sc_partition = stripslashes($addfoot_settings[sc_partition]);
 	$sc_security = stripslashes($addfoot_settings[sc_security]);
 	$apture_siteToken = stripslashes($addfoot_settings[apture_siteToken]);
 	$rein_trk_id = stripslashes($addfoot_settings[rein_trk_id]);
@@ -38,15 +38,16 @@ function ald_addfoot() {
 		echo $addfoot_other;
 	}
 
-	if ($sc_project != '') {
+	if (($sc_project != '')&&($sc_partition != '')) {
 ?>	
 	<!-- Start of StatCounter Code -->
 	<script type="text/javascript">
 	// <![CDATA[
 		var sc_project=<?php echo $sc_project; ?>; 
-		var sc_part=<?php echo $sc_part; ?>; 
+		var sc_partition=<?php echo $sc_partition; ?>; 
 		var sc_security="<?php echo $sc_security; ?>"; 
 		var sc_invisible=1; 
+		var sc_click_stat=1;
 	// ]]>
 	</script>
 	<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
@@ -79,8 +80,10 @@ function ald_addfoot() {
 	// <![CDATA[
 	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	// ]]>
 	</script>
 	<script type="text/javascript">
+	// <![CDATA[
 	try {
 	var pageTracker = _gat._getTracker("<?php echo $ga_uacct; ?>");
 	pageTracker._trackPageview();
@@ -97,7 +100,7 @@ function addfoot_default_options() {
 
 	$addfoot_settings = 	Array (
 						sc_project => '',		// StatCounter Project ID
-						sc_part => '',		// StatCounter Partition ID
+						sc_partition => '',		// StatCounter Partition ID
 						sc_security => '',		// StatCounter Security String
 						ga_uacct => '',			// Google Analytics Web Property ID
 						rein_trk_id => '',		// Reinvigorate Tracking ID

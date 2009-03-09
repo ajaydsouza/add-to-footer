@@ -22,7 +22,7 @@ function addfoot_options() {
 	if($_POST['addfoot_save']){
 		$addfoot_settings[addfoot_other] = ($_POST['addfoot_other']);
 		$addfoot_settings[sc_project] = ($_POST['sc_project']);
-		$addfoot_settings[sc_part] = ($_POST['sc_part']);
+		$addfoot_settings[sc_partition] = ($_POST['sc_partition']);
 		$addfoot_settings[sc_security] = ($_POST['sc_security']);
 		$addfoot_settings[apture_siteToken] = ($_POST['apture_siteToken']);
 		$addfoot_settings[rein_trk_id] = ($_POST['rein_trk_id']);
@@ -79,8 +79,8 @@ function addfoot_options() {
     </p>
     <p>
       <label>
-      <?php _e('StatCounter Partition ID: (Value of sc_part)','ald_addfoot_plugin'); ?>
-      <input type="textbox" name="sc_part" id="sc_part" value="<?php echo stripslashes($addfoot_settings[sc_part]); ?>">
+      <?php _e('StatCounter Partition ID: (Value of sc_partition)','ald_addfoot_plugin'); ?>
+      <input type="textbox" name="sc_partition" id="sc_partition" value="<?php echo stripslashes($addfoot_settings[sc_partition]); ?>">
       </label>
     </p>
     <p>
