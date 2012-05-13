@@ -11,7 +11,7 @@ Allows you to add absolutely anything to the footer of your WordPress theme.
 
 == Description ==
 
-Add absolutely anything to the footer for your WordPress theme. This ensures that you don't need to keep adding the same code in case you change your theme.
+<a href="http://ajaydsouza.com/wordpress/plugins/add-to-footer/">Add to Footer</a> allows you to add any HTML or JS code to the footer for your WordPress theme. This ensures that you don't need to keep adding the same code in case you change your theme.
 Simply enter the settings once and you're good to go!
 
 Comes inbuilt with support for Google Analytics and Statcounter. 
