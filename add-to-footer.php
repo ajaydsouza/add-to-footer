@@ -6,7 +6,7 @@
  *
  * @wordpress-plugin
  * Plugin Name: Add to Footer
- * Version:     1.2
+ * Version:     1.3
  * Plugin URI:  http://ajaydsouza.com/wordpress/plugins/add-to-footer/
  * Description: Allows you to add absolutely anything to the footer of your WordPress theme
  * Author:      Ajay D'Souza
