@@ -3,8 +3,8 @@ Tags: footer, theme, template
 Contributors: Ajay
 Donate link: http://ajaydsouza.com/donate/
 Stable tag: trunk
-Requires at least: 3.0
-Tested up to: 3.4
+Requires at least: 3.5
+Tested up to: 4.0
 License: GPLv2
 
 Allows you to add absolutely anything to the footer of your WordPress theme.
@@ -14,7 +14,7 @@ Allows you to add absolutely anything to the footer of your WordPress theme.
 <a href="http://ajaydsouza.com/wordpress/plugins/add-to-footer/">Add to Footer</a> allows you to add any HTML or JS code to the footer for your WordPress theme. This ensures that you don't need to keep adding the same code in case you change your theme.
 Simply enter the settings once and you're good to go!
 
-Comes inbuilt with support for Google Analytics and Statcounter. 
+Comes inbuilt with support for Google Analytics and Statcounter.
 
 
 = Key Features =
@@ -31,7 +31,7 @@ Comes inbuilt with support for Google Analytics and Statcounter.
 == Changelog ==
 
 = 1.2 =
-* Major upgrade: Removes support for Reinvigorate and Apture. 
+* Major upgrade: Removes support for Reinvigorate and Apture.
 * Modified: Updated Google Analytics and Statcounter codes
 * Modified: Redesign of admin interface
 
@@ -48,7 +48,7 @@ Release
 
 2. Extract the contents of add-to-footer.zip to wp-content/plugins/ folder. You should get a folder called add-to-footer.
 
-3. Activate the Plugin in WP-Admin. 
+3. Activate the Plugin in WP-Admin.
 
 4. Goto Settings > Add to Footer to configure
 
