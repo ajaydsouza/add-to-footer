@@ -22,6 +22,7 @@ function addfoot_options() {
 
 	if ( isset( $_POST['addfoot_save'] ) && check_admin_referer( 'addfoot-admin-options' ) ) {
 		$addfoot_settings['enable_plugin'] = isset( $_POST['enable_plugin'] ) ? true : false;
+		$addfoot_settings['disable_notice'] = isset( $_POST['disable_notice'] ) ? true : false;
 		$addfoot_settings['addfoot_other'] = $_POST['addfoot_other'];
 		$addfoot_settings['sc_project'] = $_POST['sc_project'];
 		$addfoot_settings['sc_security'] = $_POST['sc_security'];
@@ -58,9 +59,13 @@ function addfoot_options() {
 				<tr><th scope="row" style="background:#<?php if ( $addfoot_settings['enable_plugin'] ) echo 'cfc'; else echo 'fcc'; ?>"><label for="enable_plugin"><?php _e( 'Enable the plugin:', 'add-to-footer' ); ?></label></th>
 					<td style="background:#<?php if ( $addfoot_settings['enable_plugin'] ) echo 'cfc'; else echo 'fcc'; ?>"><input type="checkbox" name="enable_plugin" id="enable_plugin" <?php if ( $addfoot_settings['enable_plugin'] ) echo 'checked="checked"' ?> /></td>
 				</tr>
-			</table>
-			<br />
-			<table class="form-table">
+				<tr>
+					<th scope="row"><label for="disable_notice"><?php _e( 'Disable admin-wide notice:', 'add-to-feed' ); ?></label></th>
+					<td>
+						<input type="checkbox" name="disable_notice" id="disable_notice" <?php if ( $addfoot_settings['disable_notice'] ) echo 'checked="checked"' ?> />
+						<p class="description"><?php _e( 'Disables the "Add to Feed plugin is disabled." notice when the above option is unchecked.', 'add-to-feed' ) ?></p>
+					</td>
+				</tr>
 				<tr style="background: #eee"><th scope="row" colspan="2"><?php _e( 'Statcounter Options:', 'add-to-footer' ); ?></th>
 				</tr>
 				<tr><th scope="row"><label for="sc_project"><?php _e( 'StatCounter Project ID (Value of sc_project):', 'add-to-footer' ); ?></label></th>
@@ -84,9 +89,11 @@ function addfoot_options() {
 				<tr><th scope="row"><label for="ga_domain"><?php _e( 'Multiple sub-domain support (Value of _setDomainName):', 'add-to-footer' ); ?></label></th>
 					<td><input type="textbox" name="ga_domain" id="ga_domain" value="<?php echo esc_attr( stripslashes( $addfoot_settings['ga_domain'] ) ); ?>" style="width:250px" /></td>
 				</tr>
-				<tr style="vertical-align: top; "><th scope="row" colspan="2"><?php _e( 'Any other HTML (no PHP) to add to <code>wp_footer</code>:', 'add-to-footer' ); ?></th>
+				<tr style="background: #eee"><th scope="row" colspan="2"><?php _e( 'Other HTML or JavaScript', 'add-to-footer' ); ?></th>
 				</tr>
-				<tr style="vertical-align: top; "><td scope="row" colspan="2"><textarea name="addfoot_other" id="addfoot_other" rows="15" cols="80"><?php echo stripslashes( $addfoot_settings['addfoot_other'] ); ?></textarea></td>
+				<tr><th scope="row" colspan="2"><?php _e( 'Any other HTML (no PHP) to add to <code>wp_footer</code>:', 'add-to-footer' ); ?></th>
+				</tr>
+				<tr><td scope="row" colspan="2"><textarea name="addfoot_other" id="addfoot_other" rows="15" cols="80"><?php echo stripslashes( $addfoot_settings['addfoot_other'] ); ?></textarea></td>
 				</tr>
 			</table>
 	      </div>
@@ -172,11 +179,11 @@ function addfoot_admin_side() {
  * Display a message at the top of Admin pages if the plugin is disabled. Filters `admin_notices`.
  */
 function addfoot_admin_notice() {
-	global $addfoot_settings;
+	$addfoot_settings = addfoot_read_options();
 
 	$plugin_settings_page = admin_url( 'options-general.php?page=addfoot_options' );
 
-	if ( $addfoot_settings['enable_plugin'] ) {
+	if ( $addfoot_settings['enable_plugin'] || $addfoot_settings['disable_notice'] ) {
 		return;
 	}
 

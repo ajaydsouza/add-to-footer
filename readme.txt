@@ -33,6 +33,7 @@ Comes inbuilt with support for Google Analytics and Statcounter. v1.3 adds suppo
 = 1.3 =
 * New: Support for Google Analytics' new Universal Analytics
 * New: Admin interface
+* New: Disable admin notice if the plugin is disabled
 * Fixed: Language initialisation and renamed localisation to `add-to-footer`
 
 = 1.2 =

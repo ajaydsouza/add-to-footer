@@ -130,6 +130,7 @@ function addfoot_default_options() {
 
 	$addfoot_settings = array (
 		'enable_plugin' => false,	// Enable plugin switch
+		'disable_notice' => false,	// // Disable notice that is displayed when enable_plugin is false
 		'sc_project' => '',			// StatCounter Project ID
 		'sc_security' => '',		// StatCounter Security String
 		'ga_uacct' => '',			// Google Analytics Web Property ID
