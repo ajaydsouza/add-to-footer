@@ -77,13 +77,30 @@ function ald_addfoot() {
 <?php	}
 
 	if ( '' != $ga_uacct ) {
+		if ( $addfoot_settings['ga_ua'] ) {
 ?>
+
+	<!-- Start Google Analytics -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', '<?php echo $ga_uacct; ?>', '<?php echo $ga_domain; ?>');
+	  ga('send', 'pageview');
+
+	</script>
+	<!-- End Google Analytics -->
+
+<?php } else { ?>
+
 	<!-- Start Google Analytics -->
 	<script type="text/javascript">
 	// <![CDATA[
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', '<?php echo $ga_uacct; ?>']);
-	  _gaq.push(['_setDomainName', '<?php echo $ga_url; ?>']);
+	  _gaq.push(['_setDomainName', '<?php echo $ga_domain; ?>']);
 	  _gaq.push(['_setAllowLinker', true]);
 	  _gaq.push(['_trackPageview']);
 
@@ -96,6 +113,7 @@ function ald_addfoot() {
 	</script>
 	<!-- End Google Analytics -->
 <?php	}
+	}
 
 }
 add_action( 'wp_footer', 'ald_addfoot' );
@@ -111,12 +129,13 @@ function addfoot_default_options() {
 	$ga_url = parse_url( get_option( 'home' ), PHP_URL_HOST );
 
 	$addfoot_settings = array (
-		'enable_plugin' => false,		// Enable plugin switch
-		'sc_project' => '',		// StatCounter Project ID
+		'enable_plugin' => false,	// Enable plugin switch
+		'sc_project' => '',			// StatCounter Project ID
 		'sc_security' => '',		// StatCounter Security String
 		'ga_uacct' => '',			// Google Analytics Web Property ID
-		'ga_domain' => $ga_url,			// Google Analytics Value of _setDomainName
-		'addfoot_other' => '',	// For any other code
+		'ga_ua' => false,			// Choose between Classic Analytics or Universal Analytics
+		'ga_domain' => $ga_url,		// Google Analytics Value of _setDomainName
+		'addfoot_other' => '',		// For any other code
 	);
 	return apply_filters( 'addfoot_default_options', $addfoot_settings );
 }

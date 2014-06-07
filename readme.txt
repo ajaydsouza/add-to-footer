@@ -7,14 +7,14 @@ Requires at least: 3.5
 Tested up to: 4.0
 License: GPLv2
 
-Allows you to add absolutely anything to the footer of your WordPress theme.
+Allows you to add absolutely anything to the footer of your WordPress blog without editting a single file.
 
 == Description ==
 
 <a href="http://ajaydsouza.com/wordpress/plugins/add-to-footer/">Add to Footer</a> allows you to add any HTML or JS code to the footer for your WordPress theme. This ensures that you don't need to keep adding the same code in case you change your theme.
 Simply enter the settings once and you're good to go!
 
-Comes inbuilt with support for Google Analytics and Statcounter.
+Comes inbuilt with support for Google Analytics and Statcounter. v1.3 adds support for the new Universal Analytics!
 
 
 = Key Features =
@@ -25,10 +25,15 @@ Comes inbuilt with support for Google Analytics and Statcounter.
 
 == Upgrade Notice ==
 
-= 1.2 =
-* Major upgrade: Removes support for Reinvigorate and Apture. Redesign of admin interface. Updated Google Analytics and Statcounter codes
+= 1.3 =
+* New admin interface; support for Universal Analytics; code cleanup
 
 == Changelog ==
+
+= 1.3 =
+* New: Support for Google Analytics' new Universal Analytics
+* New: Admin interface
+* Fixed: Language initialisation and renamed localisation to `add-to-footer`
 
 = 1.2 =
 * Major upgrade: Removes support for Reinvigorate and Apture.
