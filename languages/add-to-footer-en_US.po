@@ -1,0 +1,143 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contextual Related Posts\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-06-07 12:08-0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ajay D'Souza <me@ajaydsouza.com>\n"
+"Language-Team:  <me@ajaydsouza.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_c;__ngettext\n"
+"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: add-to-footer.php:176
+msgid "Settings"
+msgstr ""
+
+#: add-to-footer.php:199 admin.inc.php:152
+msgid "Support"
+msgstr ""
+
+#: add-to-footer.php:200
+msgid "Donate"
+msgstr ""
+
+#: admin.inc.php:33
+msgid "Options saved successfully."
+msgstr ""
+
+#: admin.inc.php:42
+msgid "Options set to Default."
+msgstr ""
+
+#: admin.inc.php:48 admin.inc.php:191
+msgid "Add to Footer"
+msgstr ""
+
+#: admin.inc.php:53 admin.inc.php:113 admin.inc.php:133 admin.inc.php:143
+msgid "Click to toggle"
+msgstr ""
+
+#: admin.inc.php:54
+msgid "General options"
+msgstr ""
+
+#: admin.inc.php:57
+msgid "Enable the plugin: "
+msgstr ""
+
+#: admin.inc.php:63
+msgid "Statcounter Options:"
+msgstr ""
+
+#: admin.inc.php:65
+msgid "StatCounter Project ID (Value of sc_project): "
+msgstr ""
+
+#: admin.inc.php:68
+msgid "StatCounter Security ID (Value of sc_security): "
+msgstr ""
+
+#: admin.inc.php:71
+msgid "Google Analytics Options: "
+msgstr ""
+
+#: admin.inc.php:73
+msgid "Tracking ID: "
+msgstr ""
+
+#: admin.inc.php:76
+msgid "Multiple sub-domain support (Value of _setDomainName): "
+msgstr ""
+
+#: admin.inc.php:79
+msgid "Any other HTML (no PHP) to add to <code>wp_footer</code>:"
+msgstr ""
+
+#: admin.inc.php:87
+msgid "Save Options"
+msgstr ""
+
+#: admin.inc.php:88
+msgid "Default Options"
+msgstr ""
+
+#: admin.inc.php:88
+msgid "Do you want to set options to Default?"
+msgstr ""
+
+#: admin.inc.php:114
+msgid "Support the development"
+msgstr ""
+
+#: admin.inc.php:121
+msgid "Donation for Add to Footer"
+msgstr ""
+
+#: admin.inc.php:123
+msgid "Enter amount in USD: "
+msgstr ""
+
+#: admin.inc.php:127
+msgid "Send your donation to the author of Add to Footer"
+msgstr ""
+
+#: admin.inc.php:134
+msgid "Follow me"
+msgstr ""
+
+#: admin.inc.php:144
+msgid "Quick links"
+msgstr ""
+
+#: admin.inc.php:148
+msgid "Add to Footer plugin page"
+msgstr ""
+
+#: admin.inc.php:149
+msgid "Other plugins"
+msgstr ""
+
+#: admin.inc.php:150
+msgid "Ajay's blog"
+msgstr ""
+
+#: admin.inc.php:151
+msgid "FAQ"
+msgstr ""
+
+#: admin.inc.php:153
+msgid "Reviews"
+msgstr ""
+
+#: admin.inc.php:180
+#, php-format
+msgid ""
+"Add to Footer plugin is disabled. Please visit the <a href=\"%s\">plugin "
+"settings page</a> to enable the plugin or disable this notice."
+msgstr ""
