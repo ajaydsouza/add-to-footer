@@ -15,7 +15,7 @@
  * License:		GPL-2.0+
  * License URI:	http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:	/languages
-*/
+ */
 
 // If this file is called directly, then abort execution.
 if ( ! defined( 'WPINC' ) ) {
@@ -55,63 +55,62 @@ function ald_addfoot() {
 	$ga_uacct = stripslashes( $addfoot_settings['ga_uacct'] );
 	$ga_domain = stripslashes( $addfoot_settings['ga_domain'] );
 
-
 	if ( '' != $addfoot_other ) {
 		echo $addfoot_other;
 	}
 
 	if ( '' != $sc_project ) {
 ?>
-	<!-- Start of StatCounter Code -->
-	<script type="text/javascript">
-	// <![CDATA[
+    <!-- Start of StatCounter Code -->
+    <script type="text/javascript">
+    // <![CDATA[
 		var sc_project=<?php echo $sc_project; ?>;
 		var sc_security="<?php echo $sc_security; ?>";
-		var sc_invisible=1;
-		var sc_click_stat=1;
-	// ]]>
-	</script>
-	<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
+        var sc_invisible=1;
+        var sc_click_stat=1;
+    // ]]>
+    </script>
+    <script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script>
 	<noscript><div class="statcounter"><a title="tumblr hit counter" href="http://statcounter.com/tumblr/" class="statcounter"><img class="statcounter" src="http://c.statcounter.com/<?php echo $sc_project; ?>/0/<?php echo $sc_security; ?>/1/" alt="tumblr hit counter" /></a></div></noscript>
-	<!-- End of StatCounter Code -->
+    <!-- End of StatCounter Code -->
 <?php	}
 
 	if ( '' != $ga_uacct ) {
 		if ( $addfoot_settings['ga_ua'] ) {
 ?>
 
-	<!-- Start Google Analytics -->
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <!-- Start Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 	  ga('create', '<?php echo $ga_uacct; ?>', '<?php echo $ga_domain; ?>');
-	  ga('send', 'pageview');
+      ga('send', 'pageview');
 
-	</script>
-	<!-- End Google Analytics -->
+    </script>
+    <!-- End Google Analytics -->
 
 <?php } else { ?>
 
-	<!-- Start Google Analytics -->
-	<script type="text/javascript">
-	// <![CDATA[
-	  var _gaq = _gaq || [];
+    <!-- Start Google Analytics -->
+    <script type="text/javascript">
+    // <![CDATA[
+      var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', '<?php echo $ga_uacct; ?>']);
 	  _gaq.push(['_setDomainName', '<?php echo $ga_domain; ?>']);
-	  _gaq.push(['_setAllowLinker', true]);
-	  _gaq.push(['_trackPageview']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
 
-	  (function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-	// ]]>
-	</script>
-	<!-- End Google Analytics -->
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    // ]]>
+    </script>
+    <!-- End Google Analytics -->
 <?php	}
 	}
 
@@ -128,7 +127,7 @@ function addfoot_default_options() {
 
 	$ga_url = parse_url( get_option( 'home' ), PHP_URL_HOST );
 
-	$addfoot_settings = array (
+	$addfoot_settings = array(
 		'enable_plugin' => false,	// Enable plugin switch
 		'disable_notice' => false,	// // Disable notice that is displayed when enable_plugin is false
 		'sc_project' => '',			// StatCounter Project ID
@@ -156,7 +155,7 @@ function addfoot_read_options() {
 	unset( $addfoot_settings[0] ); // produced by the (array) casting when there's nothing in the DB
 
 	// If there are any new options added to the Default Options array, let's add them
-	foreach ( $defaults as $k=>$v ) {
+	foreach ( $defaults as $k => $v ) {
 		if ( ! isset( $addfoot_settings[ $k ] ) ) {
 			$addfoot_settings[ $k ] = $v;
 		}
@@ -173,15 +172,13 @@ function addfoot_read_options() {
 
 /**
  *  Admin option
- *
  */
 if ( is_admin() || strstr( $_SERVER['PHP_SELF'], 'wp-admin/' ) ) {
 
 	/**
 	 *  Load the admin pages if we're in the Admin.
-	 *
 	 */
-	require_once( ALD_ADDFOOT_DIR . "/admin.inc.php" );
+	require_once( ALD_ADDFOOT_DIR . '/admin.inc.php' );
 
 	/**
 	 * Adding WordPress plugin action links.
@@ -193,7 +190,7 @@ if ( is_admin() || strstr( $_SERVER['PHP_SELF'], 'wp-admin/' ) ) {
 
 		return array_merge(
 			array(
-				'settings' => '<a href="' . admin_url( 'options-general.php?page=addfoot_options' ) . '">' . __( 'Settings', 'add-to-footer' ) . '</a>'
+				'settings' => '<a href="' . admin_url( 'options-general.php?page=addfoot_options' ) . '">' . __( 'Settings', 'add-to-footer' ) . '</a>',
 			),
 			$links
 		);
@@ -204,7 +201,7 @@ if ( is_admin() || strstr( $_SERVER['PHP_SELF'], 'wp-admin/' ) ) {
 	/**
 	 * Add meta links on Plugins page.
 	 *
-	 * @param array $links
+	 * @param array  $links
 	 * @param string $file
 	 * @return array
 	 */
@@ -225,4 +222,3 @@ if ( is_admin() || strstr( $_SERVER['PHP_SELF'], 'wp-admin/' ) ) {
 
 } // End admin.inc
 
-?>
